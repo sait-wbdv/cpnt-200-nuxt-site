@@ -1,11 +1,12 @@
 <script setup>
-// import the supabase client
 const client = useSupabaseClient();
-// wrap a nuxt fetch composable around this query
-// GET ALL MOVIE TITLES
+
 const { data: films } = await useAsyncData("film", async () => {
   try {
     let { data, error } = await client.from("film").select("title");
+    if (error) {
+      throw new Error(`Fetch Error: ${error}`);
+    }
     return data;
   } catch (error) {
     console.error(error);
@@ -15,7 +16,7 @@ const { data: films } = await useAsyncData("film", async () => {
 <template>
   <div>
     <ul>
-      <li v-for="film in films" :key="film.id">{{ film.title }}</li>
+      <li v-for="(film, index) in films" :key="index">{{ film.title }}</li>
     </ul>
   </div>
 </template>
