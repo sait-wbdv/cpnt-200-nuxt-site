@@ -1,75 +1,48 @@
-# Nuxt 3 Minimal Starter
+# CPNT 200 Demo Site
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This provides an example of the basic functionality and content needed for the CPNT 200 Final.
 
-## Setup
+## Todo List
 
-Make sure to install the dependencies:
+### Configuration
 
-```bash
-# npm
-npm install
+- [ ] Deploy CMS with Supabase as a backend service
+- [ ] Connect Supabase to cpnt-200-site frontend
 
-# pnpm
-pnpm install
+### Page Setup
 
-# yarn
-yarn install
+- [ ] Dynamic server route for blog post
+- [ ] Dynamic pages for blog posts
+- [ ] Home Page Introduce blog
+- [ ] blog collection: list all blog posts
+- [ ] sign up page: mostly to fill out the navbar
 
-# bun
-bun install
-```
+### Component Setup
 
-## Development Server
+- [ ] Navbar: logo (home), blog collection page, login button
+  - [ ] login modal has a link to signup
+  - [ ] login button changes to logout when user is logged in
+- [ ] Login Modal
 
-Start the development server on `http://localhost:3000`:
+### Modules
 
-```bash
-# npm
-npm run dev
+- [ ] Tailwind
+- [ ] Nuxt UI ?
+- [ ] Icons
+- [ ] Nuxt Supabase
 
-# pnpm
-pnpm run dev
+### Authentication
 
-# yarn
-yarn dev
+- [ ] User Sign Up
+  - extra: add visual indication on bad password etc
+- [ ] User Log in
+  - [ ] password
+  - [ ] otp
+  - [ ] todo: google (for cpnt-265)
+- [ ] User Logout
 
-# bun
-bun run dev
-```
+### Authorization
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [ ] end users can see and read all posts
+- [ ] authenticated users can like posts
+- [ ] user can see user's account info

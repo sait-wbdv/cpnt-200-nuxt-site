@@ -1,9 +1,9 @@
 <script setup>
-const client = useSupabaseClient();
+const supabase = useSupabaseClient();
 
 const { data: films } = await useAsyncData("film", async () => {
   try {
-    let { data, error } = await client.from("film").select("title");
+    let { data, error } = await supabase.from("film").select("title");
     if (error) {
       throw new Error(`Fetch Error: ${error}`);
     }
@@ -14,7 +14,7 @@ const { data: films } = await useAsyncData("film", async () => {
 });
 const { data: customers } = await useAsyncData("customer", async () => {
   try {
-    let { data, error } = await client
+    let { data, error } = await supabase
       .from("customer")
       .select("first_name", "last_name");
     if (error) {
@@ -30,7 +30,6 @@ const { data: customers } = await useAsyncData("customer", async () => {
   <div>
     <h1>Movie Store Lists</h1>
     <section>
-      <!-- TODO: Hide this to unsigned in users -->
       <h2>Users: visible to signed in user</h2>
       <ul>
         <li v-for="(customer, index) in customers" :key="index">

@@ -3,13 +3,17 @@ const supabase = useSupabaseClient();
 const email = ref("");
 const password = ref("");
 async function signUp() {
-  const { data, error } = await supabase.auth.signUp({
-    email: email.value,
-    password: password.value,
-    options: {
-      emailRedirectTo: "http://localhost:3000/confirm",
-    },
-  });
+  try {
+    const { data, error } = await supabase.auth.signUp({
+      email: email.value,
+      password: password.value,
+    });
+    if (error) {
+      throw error;
+    }
+  } catch (err) {
+    console.error(`Sign Up Error: ${err}`);
+  }
 }
 </script>
 <template>

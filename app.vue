@@ -1,4 +1,5 @@
 <script setup>
+const supabase = useSupabaseClient();
 async function logout() {
   try {
     let { error } = await supabase.auth.signOut();

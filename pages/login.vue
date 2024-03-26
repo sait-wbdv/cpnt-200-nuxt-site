@@ -3,10 +3,15 @@ const supabase = useSupabaseClient();
 const email = ref("");
 const password = ref("");
 async function login() {
-  let { data, error } = await supabase.auth.signInWithPassword({
-    email: email.value,
-    password: password.value,
-  });
+  try {
+    let { error } = await supabase.auth.signInWithPassword({
+      email: email.value,
+      password: password.value,
+    });
+    if (error) throw error;
+  } catch (err) {
+    console.log(data);
+  }
 }
 </script>
 <template>
@@ -18,13 +23,18 @@ async function login() {
       <!-- Bind the varaibles to the input with v-model -->
       <label for="email">
         Email:
-        <input type="email" name="email" v-model="email" />
+        <input type="email" name="email" id="email" v-model="email" />
       </label>
       <label for="password">
         Password:
-        <input type="password" name="password" v-model="password" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          v-model="password"
+        />
       </label>
-      <button @click="login">Login</button>
+      <input type="submit" value="login" @click="login" />
     </form>
   </main>
 </template>
