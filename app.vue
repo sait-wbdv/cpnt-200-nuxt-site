@@ -10,15 +10,5 @@ async function logout() {
 }
 </script>
 <template>
-  <header>
-    <div><NuxtLink to="/">Logo</NuxtLink></div>
-    <nav>
-      <NuxtLink to="/login">Login Page</NuxtLink>
-      <NuxtLink to="/signup">Sign Up Page</NuxtLink>
-    </nav>
-    <div>
-      <button @click="logout">logout</button>
-    </div>
-  </header>
   <NuxtPage />
 </template>
