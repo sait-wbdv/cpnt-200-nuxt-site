@@ -6,8 +6,8 @@ This provides an example of the basic functionality and content needed for the C
 
 ### Configuration
 
-- [ ] Deploy CMS with Supabase as a backend service
-- [ ] Connect Supabase to cpnt-200-site frontend
+- [x] Deploy CMS with Supabase as a backend service
+- [x] Connect Supabase to cpnt-200-site frontend
 
 ### Page Setup
 

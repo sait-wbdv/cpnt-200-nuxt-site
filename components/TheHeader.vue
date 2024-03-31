@@ -1,9 +1,13 @@
 <template>
   <header>
     <!-- logo -->
-    <div></div>
+    <div>logo</div>
     <!-- menu -->
-    <nav></nav>
+    <nav>
+      <ul>
+        <li><NuxtLink to="/blog">Blog</NuxtLink></li>
+      </ul>
+    </nav>
     <!-- action -->
     <div></div>
   </header>
