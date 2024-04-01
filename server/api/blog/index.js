@@ -1,9 +1,9 @@
 import { serverSupabaseClient } from "#supabase/server";
 
 export default eventHandler(async (event) => {
-  const client = await serverSupabaseClient(event);
+  const supabase = await serverSupabaseClient(event);
 
-  const { data } = await client.from("blog").select("*");
+  const { data } = await supabase.from("blog").select("*");
 
   return data;
 });

@@ -1,17 +1,21 @@
 <script setup>
-const { data: blog } = await useFetch("/api/blog", {
+const { data: posts } = await useFetch("/api/blog", {
   headers: useRequestHeaders(["cookie"]),
 });
 </script>
 <template>
   <main>
     <header>
-      <h1>Blog Landing Page</h1>
+      <h1>Server Side Blog Landing Page</h1>
+      <p>
+        Examples in the blog folders are using server api routes to pass data to
+        the client
+      </p>
     </header>
     <div>
       <ul>
-        <li v-for="({ title }, index) in blog" :key="index">
-          <NuxtLink to="/">{{ title }}</NuxtLink>
+        <li v-for="(post, index) in posts" :key="index">
+          <NuxtLink :to="`/blog/${post.slug}`">{{ post.title }}</NuxtLink>
         </li>
       </ul>
     </div>
