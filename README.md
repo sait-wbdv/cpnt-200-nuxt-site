@@ -46,3 +46,9 @@ This provides an example of the basic functionality and content needed for the C
 - [ ] end users can see and read all posts
 - [ ] authenticated users can like posts
 - [ ] user can see user's account info
+
+---
+
+## Resources
+
+- [Slugify](https://www.npmjs.com/package/slugify): A library that quickly generates slugs for url endpoints. Can be used to replace the approach done in `/server/api/blog/index.js`

@@ -1,14 +1,12 @@
 <script setup>
-const props = defineProps({
-  error: Object,
-});
-
+const error = useError();
 const handleError = () => clearError({ redirect: "/" });
 </script>
 
 <template>
-  <div>
+  <main>
     <h2>{{ error.statusCode }}</h2>
+    <p>{{ error.message }}</p>
     <button @click="handleError">Clear errors</button>
-  </div>
+  </main>
 </template>
