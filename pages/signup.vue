@@ -22,7 +22,6 @@ async function signUp() {
       <h1>Sign Up Page</h1>
     </header>
     <form>
-      <!-- Bind the varaibles to the input with v-model -->
       <label for="email">
         Email:
         <input type="email" name="email" v-model="email" />
