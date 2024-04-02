@@ -14,7 +14,7 @@
       <div>
         <NuxtLink to="login">Login</NuxtLink>
       </div>
-      <button>Logout</button>
+      <button @click="useSignOut">Logout</button>
     </div>
   </header>
 </template>
