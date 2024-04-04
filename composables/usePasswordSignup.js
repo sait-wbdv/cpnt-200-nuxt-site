@@ -1,6 +1,9 @@
 export default async function () {
   const supabase = useSupabaseClient();
-  let { error } = await supabase.auth.signOut();
+  const { error } = await supabase.auth.signUp({
+    email: "ashlynnknox@gmail.com",
+    password: "deadWeather1",
+  });
   if (error) {
     console.error(error);
   }

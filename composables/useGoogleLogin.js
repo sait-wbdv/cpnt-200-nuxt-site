@@ -1,6 +1,8 @@
 export default async function () {
   const supabase = useSupabaseClient();
-  let { error } = await supabase.auth.signOut();
+  const { error } = supabase.auth.signInWithOAuth({
+    provider: "google",
+  });
   if (error) {
     console.error(error);
   }
