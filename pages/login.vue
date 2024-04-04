@@ -1,14 +1,12 @@
 <script setup>
 const email = ref("");
 const password = ref("");
-
-let { data, error } = await supabase.auth.signInWithPassword({
-  email: email.value,
-  password: password.value,
-});
 </script>
 <template>
   <main>
+    <header>
+      <h1>Login</h1>
+    </header>
     <form>
       <label for="email">
         Email:
@@ -23,7 +21,12 @@ let { data, error } = await supabase.auth.signInWithPassword({
           v-model="password"
         />
       </label>
-      <input type="submit" value="Sign In" @click="useSignIn" />
+      <input
+        type="submit"
+        value="Sign In"
+        @click="usePasswordLogin(email, password)"
+      />
     </form>
+    <button @click="useGoogleLogin">Login with Google</button>
   </main>
 </template>

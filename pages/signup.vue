@@ -1,20 +1,6 @@
 <script setup>
-const supabase = useSupabaseClient();
 const email = ref("");
 const password = ref("");
-async function signUp() {
-  try {
-    const { data, error } = await supabase.auth.signUp({
-      email: email.value,
-      password: password.value,
-    });
-    if (error) {
-      throw error;
-    }
-  } catch (err) {
-    console.error(`Sign Up Error: ${err}`);
-  }
-}
 </script>
 <template>
   <main>
@@ -30,7 +16,7 @@ async function signUp() {
         Password:
         <input type="password" name="password" v-model="password" />
       </label>
-      <button @click="signUp">Sign Up</button>
+      <button @click="usePasswordSignup">Sign Up</button>
     </form>
   </main>
 </template>
